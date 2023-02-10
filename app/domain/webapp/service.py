@@ -22,7 +22,7 @@ def triggerJenkinsJobOrRaiseException(jenkins_client, jenkins_job_name: str, jen
     try:
         jenkins_queue_id: int = jenkins_client.build_job(
             jenkins_job_name,
-            parameters=jenkins_job_parameters.__dict__,
+            parameters=jenkins_job_parameters,
             token=None
         )
         return jenkins_queue_id
