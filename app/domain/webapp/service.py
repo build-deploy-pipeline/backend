@@ -2,7 +2,7 @@ import jenkins
 from config import Settings
 from api.models.webapp import RequestBodyCreateWebApp
 from .models import CreateJenkinsJobParameters
-
+import custom_exception
 
 def TriggerJenkinsJob(request_body: RequestBodyCreateWebApp, settings: Settings):
     """생성을 jenkins에게 위임"""
@@ -11,7 +11,7 @@ def TriggerJenkinsJob(request_body: RequestBodyCreateWebApp, settings: Settings)
     try:
         jenkins_job_name = getJenkinsJobByTemplateType(request_body.templateType)
     except IndexError:
-        raise RuntimeError("유효하지 않은 템플릿type")
+        raise custom_exception.NotFoundTemplate
 
     jenkins_job_parameters = generateJenkinsJobParameters(request_body)
     triggerJenkinsJobOrRaiseException(jenkins_client, jenkins_job_name, jenkins_job_parameters.__dict__)
@@ -29,7 +29,7 @@ def triggerJenkinsJobOrRaiseException(jenkins_client, jenkins_job_name: str, jen
     except jenkins.NotFoundException as e:
         raise RuntimeError("Jenkins job이 존재하지 않습니다.")
     except Exception as e:
-        raise RuntimeError(e)
+        raise custom_exception.JenkinsOtherError
 
 
 def generateJenkinsJobParameters(request_body):
