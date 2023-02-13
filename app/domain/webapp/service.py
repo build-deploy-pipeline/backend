@@ -45,7 +45,7 @@ def generateJenkinsJobParameters(request_body):
 def getJenkinsJobByTemplateType(template_type: str):
     """template타입에 따른 젠킨스 잡 조회"""
     jenkins_jobs = {
-        "fastapi": "test/remote_trigger"
+        "fastapi": "create_webapp/fastapi"
     }
 
     return jenkins_jobs[template_type]
