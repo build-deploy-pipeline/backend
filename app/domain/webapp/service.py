@@ -35,10 +35,10 @@ def triggerJenkinsJobOrRaiseException(jenkins_client, jenkins_job_name: str, jen
 def generateJenkinsJobParameters(request_body):
     """젠킨스 잡 파라미터 생성"""
     return CreateJenkinsJobParameters(
-        applicationName=request_body.applicationName,
+        application_name=request_body.applicationName,
         # templateVersion=request_body.templateVersion,
-        githubLink=request_body.githubLink,
-        githubBranch=request_body.githubBranch
+        github_link=request_body.githubLink,
+        github_branch=request_body.githubBranch
     )
 
 

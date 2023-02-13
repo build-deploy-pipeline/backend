@@ -4,10 +4,10 @@ import json
 
 @dataclass
 class CreateJenkinsJobParameters:
-    applicationName: str
+    application_name: str
     # templateVersion: str
-    githubLink: str
-    githubBranch: str
+    github_link: str
+    github_branch: str
 
     @property
     def __dict__(self):
