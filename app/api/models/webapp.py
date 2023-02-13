@@ -6,7 +6,7 @@ class RequestBodyCreateWebApp(BaseModel):
     applicationName: str = "demo_application"
     templateType: str = "fastapi"
     # templateVersion: str = "0.1"
-    githubLink: str = "https://github.com/build-deploy-pipeline/argo-manifest-nginx-sample.git"
+    githubLink: str = "Https://github.com/build-deploy-pipeline/test-alpine-dockerfile.git"
     githubBranch: str = "main"
 
     class Config:
