@@ -5,7 +5,7 @@ import json
 @dataclass
 class CreateJenkinsJobParameters:
     applicationName: str
-    templateVersion: str
+    # templateVersion: str
     githubLink: str
     githubBranch: str
 

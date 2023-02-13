@@ -36,7 +36,7 @@ def generateJenkinsJobParameters(request_body):
     """젠킨스 잡 파라미터 생성"""
     return CreateJenkinsJobParameters(
         applicationName=request_body.applicationName,
-        templateVersion=request_body.templateVersion,
+        # templateVersion=request_body.templateVersion,
         githubLink=request_body.githubLink,
         githubBranch=request_body.githubBranch
     )
