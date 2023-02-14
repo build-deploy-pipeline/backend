@@ -5,6 +5,9 @@ import sys
 def get_logger():
     """로거 생성"""
     logger = logging.getLogger()
+    if logger.handlers:
+        return logger
+
     logger.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
