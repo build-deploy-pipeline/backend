@@ -6,7 +6,7 @@ class RequestBodyCreateWebApp(BaseModel):
     applicationName: str = "demo_application"
     templateType: str = "fastapi"
     # templateVersion: str = "0.1"
-    githubLink: str = "https://github.com/build-deploy-pipeline/test-alpine-dockerfile.git"
+    githubLink: str = "https://github.com/build-deploy-pipeline/fastapi-dockerfile-demo.git"
     githubBranch: str = "main"
 
     class Config:
